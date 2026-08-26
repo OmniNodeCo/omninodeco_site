@@ -3,21 +3,21 @@
 # ------------------------------------------------------------
 # Runs on every push to `main` (and manually via "Run workflow").
 #
-# Required repository secrets (Settings → Secrets and variables
-# → Actions → New repository secret):
+# Required repository secrets:
 #
-#   FTP_SERVER       e.g.  ftp.example.com   (no scheme, no path)
+#   FTP_SERVER       e.g. ftp.example.com
 #   FTP_USERNAME     your FTP login
 #   FTP_PASSWORD     your FTP password
-#   FTP_PORT         default 21  (22 for SFTP, 990 for FTPS)
+#   FTP_PORT         default 21
 #   FTP_SERVER_DIR   remote folder to publish into, e.g. /public_html
 #
-# Optional secrets:
+# Optional secret:
+#
 #   WEBSITE_URL      production URL for the post-deploy smoke test,
 #                    e.g. https://www.example.com
 #
-# For explicit FTP (plain), implicit FTPS or SFTP, change the
-# `protocol` input below: ftp | ftps | ftps-legacy | sftp
+# Protocol options:
+#   ftp | ftps | ftps-legacy | sftp
 # ============================================================
 
 name: Deploy website to FTP
@@ -25,10 +25,10 @@ name: Deploy website to FTP
 on:
   push:
     branches: [main]
-  workflow_dispatch: # allow manual deploys from the Actions tab
+  workflow_dispatch:
 
 permissions:
-  contents: read # only need to check out the repo — no write scopes
+  contents: read
 
 # One deploy at a time: a new push cancels any in-flight upload.
 concurrency:
@@ -47,14 +47,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. (Optional) build step — insert your build here if the
-      #    site ever grows a bundler, e.g.
-      #      - name: Build site
-      #        run: npm ci && npm run build
-      #    (Point the FTP action at the build output via FTP_SERVER_DIR.)
+      # 2. Optional build step
+      # Uncomment and customize if the site needs a build:
+      #
+      # - name: Build site
+      #   run: |
+      #     npm ci
+      #     npm run build
 
-      # 3. Sync the site to the FTP server using encrypted secrets.
-      #    Nothing sensitive is stored in this file.
+      # 3. Sync the site to the FTP server
       - name: 📂 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -65,9 +66,7 @@ jobs:
           protocol: ftp
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           timeout: 60000
-          dangerous-clean-slow: true # mirror the repo: delete remote files not in it.
-                                    # Set to false if FTP_SERVER_DIR contains other
-                                    # content you must keep.
+          dangerous-clean-slow: true
           exclude: |
             **/.git*
             **/.git*/**
@@ -80,16 +79,45 @@ jobs:
             **/Thumbs.db
             **/*.log
 
-      # 4. Smoke test: confirm the production URL answers 200.
-      #    The publish target lives in the WEBSITE_URL secret.
+      # 4. Smoke test production
+      #
+      # The `secrets` context cannot be used directly in an `if:`
+      # expression. Pass the secret through an environment variable.
       - name: 🌐 Smoke test production
-        if: ${{ secrets.WEBSITE_URL != '' }}
-        run: curl --fail --silent --show-error --output /dev/null --max-time 30 "${{ secrets.WEBSITE_URL }}"
+        env:
+          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
+        if: env.WEBSITE_URL != ''
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --output /dev/null \
+            --max-time 30 \
+            "$WEBSITE_URL"
 
-      # 5. Summary: show the site we published to.
+          echo "✅ Production smoke test passed."
+
+      # 5. Summary
+      #
+      # Secrets are exposed to the shell only through environment
+      # variables. Passwords are never included in the summary.
       - name: 📝 Deploy summary
         if: always()
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
         run: |
           echo "### 🚀 Deploy finished" >> "$GITHUB_STEP_SUMMARY"
-          echo "- 📂 Uploaded to: \`${{ secrets.FTP_SERVER }}\` → \`${{ secrets.FTP_SERVER_DIR }}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- 🌐 Website: ${{ secrets.WEBSITE_URL }}" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "- 📂 Uploaded to: \`$FTP_SERVER\` → \`$FTP_SERVER_DIR\`" \
+            >> "$GITHUB_STEP_SUMMARY"
+
+          if [ -n "$WEBSITE_URL" ]; then
+            echo "- 🌐 Website: $WEBSITE_URL" \
+              >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- 🌐 Website: Not configured" \
+              >> "$GITHUB_STEP_SUMMARY"
+          fi
