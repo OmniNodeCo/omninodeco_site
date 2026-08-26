@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — OmniNodeCo</title>
+  <meta name="description" content="OmniNodeCo builds the edge network for modern applications. Founded in 2021, we run 42 regions and 1.2M+ containers on our own infrastructure." />
+  <meta property="og:title" content="About — OmniNodeCo" />
+  <meta property="og:description" content="The team, mission and story behind the edge network." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.omninodeco.com/about.html" />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="OmniNodeCo home">
+        <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+          <circle cx="17" cy="17" r="4" fill="url(#bm)" />
+          <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+          <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+          <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+          <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+          <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm)" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+        OmniNodeCo
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / About</div>
+      <h1>Infrastructure people can <span class="gradient-text">stop thinking about</span></h1>
+      <p>We're a distributed team of 60 engineers, operators and designers who believe the network should be the boring part — so your users never notice it.</p>
+    </div>
+  </section>
+
+  <!-- ================= MISSION ================= -->
+  <section class="section" style="padding-top:32px;">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="reveal">
+          <span class="eyebrow">Our mission</span>
+          <h2 style="font-size:clamp(28px,3.4vw,40px); margin:14px 0 18px;">Distance is a bug. <br />We're patching it.</h2>
+          <p class="muted" style="margin-bottom:16px;">
+            Every millisecond between your code and your user is a tax on quality. OmniNodeCo
+            started in 2021 when three engineers got tired of explaining why a "global" app
+            felt slow in the other hemisphere.
+          </p>
+          <p class="muted" style="margin-bottom:16px;">
+            Today we operate 42 edge regions on our own hardware, run everything we ship,
+            and publish every incident. We're profitable, independent, and hiring.
+          </p>
+          <a class="btn btn-primary" href="contact.html">Work with us</a>
+        </div>
+        <div class="reveal">
+          <img src="img/about.jpg" alt="Holographic server infrastructure at OmniNodeCo HQ" width="1400" height="764" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Story</span>
+        <h2>How we got here</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="year">2021</div>
+          <h3>Founded in a Berlin basement</h3>
+          <p>Three engineers, one rented rack in Frankfurt and a very opinionated manifesto: "The network should feel local, everywhere."</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2022</div>
+          <h3>OmniCore goes live</h3>
+          <p>Our container orchestrator runs production traffic for our first 12 customers. Uptime: 99.98% — not good enough, we said.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2023</div>
+          <h3>20 regions, 1 control plane</h3>
+          <p>EdgeMesh reaches 20 regions and we open the public API. FluxDB ingests its first billion metrics in a single day.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <h3>FluxDB 2.0 &amp; Sentinel</h3>
+          <p>Rewritten in Rust, FluxDB 2.0 cuts query latency by 60%. Sentinel blocks its first 1 Tbps DDoS attack.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2025</div>
+          <h3>42 regions, 60 people</h3>
+          <p>The mesh covers six continents. Cortex brings sub-10 ms ML inference to the edge. The team grows to 60 across 14 countries.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2026</div>
+          <h3>This website ships via GitHub Actions → FTP</h3>
+          <p>Even our marketing site runs the same push-to-deploy discipline as the platform. Dogfooding, always.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VALUES ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Values</span>
+        <h2>What we optimize for</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card reveal">
+          <h3>Latency is a feature</h3>
+          <p>We measure everything in milliseconds and ship nothing that doesn't make the network faster or more reliable.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Dogfood or die</h3>
+          <p>Every service we offer runs on our own stack, on our own hardware, with the same API you get.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Radical transparency</h3>
+          <p>Public status, public postmortems, public roadmaps. If we break something, you'll hear it from us first.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Team</span>
+        <h2>The humans behind the mesh</h2>
+      </div>
+
+      <div class="grid grid-4">
+        <article class="card team-card reveal">
+          <div class="avatar">AK</div>
+          <h3>Amara Kessler</h3>
+          <div class="role">Co-founder · CEO</div>
+          <p>Ex-SRE at a hyperscaler. Still answers the 3am on-call page.</p>
+        </article>
+        <article class="card team-card reveal">
+          <div class="avatar">DO</div>
+          <h3>Dmitri Okafor</h3>
+          <div class="role">Co-founder · CTO</div>
+          <p>Wrote the first version of EdgeMesh on a train. Regrets nothing.</p>
+        </article>
+        <article class="card team-card reveal">
+          <div class="avatar">LF</div>
+          <h3>Lena Fernández</h3>
+          <div class="role">Co-founder · CPO</div>
+          <p>Translates operator pain into API design. Hates footguns.</p>
+        </article>
+        <article class="card team-card reveal">
+          <div class="avatar">JW</div>
+          <h3>Jonas Weber</h3>
+          <div class="role">Head of Edge Ops</div>
+          <p>Runs the 42 regions like a Swiss railway. On time, every time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Come build the <span class="gradient-text">boring network</span> with us</h2>
+        <p>We hire engineers, operators and support humans in 14 countries. Remote-first, open-source friendly.</p>
+        <a class="btn btn-primary" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm2)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+              <circle cx="17" cy="17" r="4" fill="url(#bm2)" />
+              <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+              <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+              <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+              <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+              <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm2)" stroke-width="1.4" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="bm2" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+                </linearGradient>
+              </defs>
+            </svg>
+            OmniNodeCo
+          </a>
+          <p>The edge network for modern applications. Compute, data and intelligence — delivered wherever your users are.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html#featured">OmniCore</a></li>
+            <li><a href="projects.html">EdgeMesh</a></li>
+            <li><a href="projects.html">FluxDB</a></li>
+            <li><a href="projects.html">NodePilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html">Status: <span style="color:var(--ok);">All systems operational</span></a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="mailto:hello@omninodeco.com">hello@omninodeco.com</a></li>
+            <li><a href="contact.html">Support 24/7</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> OmniNodeCo. All rights reserved.</span>
+        <span class="deploy-chip"><span class="dot"></span>Deployed via GitHub Actions → FTP</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

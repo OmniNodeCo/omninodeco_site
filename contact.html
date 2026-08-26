@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — OmniNodeCo</title>
+  <meta name="description" content="Get in touch with OmniNodeCo — sales, support, partnerships and careers. We reply within one business day." />
+  <meta property="og:title" content="Contact — OmniNodeCo" />
+  <meta property="og:description" content="Talk to an engineer, not a sales bot." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.omninodeco.com/contact.html" />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="OmniNodeCo home">
+        <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+          <circle cx="17" cy="17" r="4" fill="url(#bm)" />
+          <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+          <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+          <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+          <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+          <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm)" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+        OmniNodeCo
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+      <h1>Talk to an <span class="gradient-text">engineer</span>, not a sales bot</h1>
+      <p>Questions about the platform, access requests, partnerships or careers — we read everything and reply within one business day.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" style="padding-top:24px;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info column -->
+        <div>
+          <article class="card contact-info-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 6l-10 7L2 6" /></svg>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p style="margin-top:4px;"><a href="mailto:hello@omninodeco.com" style="color:var(--accent);">hello@omninodeco.com</a><br />support@omninodeco.com for incidents</p>
+            </div>
+          </article>
+
+          <article class="card contact-info-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></svg>
+            </div>
+            <div>
+              <h3>Offices</h3>
+              <p style="margin-top:4px;">Berlin (HQ) · Amsterdam · Singapore<br />Fully remote across 14 countries</p>
+            </div>
+          </article>
+
+          <article class="card contact-info-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
+            </div>
+            <div>
+              <h3>Support</h3>
+              <p style="margin-top:4px;">24/7 for paid plans.<br />Median first response: 11 minutes.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Form column -->
+        <div class="card form-card reveal">
+          <h3 style="font-size:22px; margin-bottom:22px;">Send us a message</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" placeholder="Ada Lovelace" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Analytical Engines Ltd." autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="ada@example.com" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="General enquiry">General enquiry</option>
+                  <option value="Sales">Sales</option>
+                  <option value="Support">Support</option>
+                  <option value="Partnerships">Partnerships</option>
+                  <option value="Careers">Careers</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us what you're building…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>
+            </button>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" style="padding-top:0;" id="faq">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Quick answers</h2>
+      </div>
+
+      <div class="faq" style="max-width:760px; margin:0 auto;">
+        <details class="reveal" open>
+          <summary>How fast can I deploy to the edge?</summary>
+          <p>If your repo is already on GitHub, connect it and pick regions — most teams run their first production workload within 30 minutes. Push-to-deploy keeps it that way forever.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you really operate your own hardware?</summary>
+          <p>Yes. We lease and operate infrastructure in 42 colocation facilities on six continents. No third-party cloud in the path between your users and your workloads.</p>
+        </details>
+        <details class="reveal">
+          <summary>What does pricing look like?</summary>
+          <p>The free tier includes 5 regions and 50 GB-month of edge compute. Paid plans start at $49/month and scale with usage — no long-term contracts, no egress fees.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you offer support for migrating from another cloud?</summary>
+          <p>Yes — our solutions team runs free migration workshops. Most teams move without downtime using our built-in traffic mirroring.</p>
+        </details>
+        <details class="reveal">
+          <summary>How does this website get deployed?</summary>
+          <p>This very site is a static site published with GitHub Actions over FTP. Every push to <code style="color:var(--accent);">main</code> syncs it to production using credentials stored as encrypted GitHub secrets.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Prefer to <span class="gradient-text">try it first</span>?</h2>
+        <p>Spin up a sandbox project in the free tier. Five regions, real traffic, no credit card.</p>
+        <a class="btn btn-primary" href="projects.html">Browse projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm2)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+              <circle cx="17" cy="17" r="4" fill="url(#bm2)" />
+              <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+              <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+              <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+              <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+              <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm2)" stroke-width="1.4" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="bm2" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+                </linearGradient>
+              </defs>
+            </svg>
+            OmniNodeCo
+          </a>
+          <p>The edge network for modern applications. Compute, data and intelligence — delivered wherever your users are.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html#featured">OmniCore</a></li>
+            <li><a href="projects.html">EdgeMesh</a></li>
+            <li><a href="projects.html">FluxDB</a></li>
+            <li><a href="projects.html">NodePilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html">Status: <span style="color:var(--ok);">All systems operational</span></a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="mailto:hello@omninodeco.com">hello@omninodeco.com</a></li>
+            <li><a href="contact.html">Support 24/7</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> OmniNodeCo. All rights reserved.</span>
+        <span class="deploy-chip"><span class="dot"></span>Deployed via GitHub Actions → FTP</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

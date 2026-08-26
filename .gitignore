@@ -1,0 +1,24 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Editors
+.vscode/
+.idea/
+
+# Local dev servers
+.python-version
+
+# Never commit credentials
+.env
+.env.*
+!.env.example
+
+# Local deploy test output
+deploy-test/
+
+# Kept local-only: pushed to GitHub once the token/App has the
+# "workflows" permission (GitHub blocks workflow writes otherwise).
+# Re-enable with: git add -f .github/workflows/deploy.yml
+.github/workflows/deploy.yml

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniNodeCo — Global edge infrastructure for modern applications</title>
+  <meta name="description" content="OmniNodeCo runs a global edge network that ships compute, data and intelligence to wherever your users are — with 99.99% uptime, 42 regions and sub-120ms latency." />
+  <meta property="og:title" content="OmniNodeCo — Compute that ships with your code" />
+  <meta property="og:description" content="Global edge infrastructure: managed Kubernetes, edge compute, realtime data and observability — deployed to 42 regions in minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.omninodeco.com/" />
+  <meta property="og:image" content="img/hero.jpg" />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="OmniNodeCo home">
+        <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+          <circle cx="17" cy="17" r="4" fill="url(#bm)" />
+          <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+          <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+          <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+          <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+          <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm)" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+        OmniNodeCo
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Global edge infrastructure</span>
+          <h1>Compute that ships <span class="gradient-text">with your code</span></h1>
+          <p class="hero-sub">
+            OmniNodeCo runs a worldwide network of intelligent nodes that puts your
+            containers, data and models milliseconds from every user — deploy once,
+            run everywhere.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="projects.html">
+              Explore projects
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </a>
+            <a class="btn btn-ghost" href="contact.html">Talk to an engineer</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img src="img/hero.jpg" alt="OmniNodeCo global edge network — nodes connected across the world" width="1600" height="893" />
+          <div class="hero-float f1"><span class="dot"></span>42 regions live</div>
+          <div class="hero-float f2"><span class="dot"></span>p95 latency · 118 ms</div>
+        </div>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <b>99.99%</b>
+          <span>Uptime SLA</span>
+        </div>
+        <div class="stat">
+          <b>42</b>
+          <span>Edge regions</span>
+        </div>
+        <div class="stat">
+          <b>118 ms</b>
+          <span>p95 global latency</span>
+        </div>
+        <div class="stat">
+          <b>4.9M</b>
+          <span>Requests per minute</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOGO STRIP ================= -->
+  <section class="section tight">
+    <div class="container">
+      <div class="logo-strip reveal" aria-label="Trusted by">
+        <span>NORDWIND</span><span>HELIO LABS</span><span>QUANTUM ROW</span>
+        <span>PARALLAX</span><span>OCTAVE</span><span>BLOOMFIELD</span><span>VANTA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Platform</span>
+        <h2>Everything you need to run at the edge</h2>
+        <p>One control plane. One API. Forty-two regions that behave like a single machine.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8M12 17v4" /><circle cx="12" cy="10.5" r="2" /></svg>
+          </div>
+          <h3>Edge compute</h3>
+          <p>Run containers and functions in 42 regions automatically, with smart routing that keeps every request close to home.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-8 10-10 10S2 17.5 2 12A10 10 0 0 1 12 2z" /><path d="M12 6v6l4 2" /></svg>
+          </div>
+          <h3>Managed Kubernetes</h3>
+          <p>Clusters that scale themselves. Upgrades, node drains and failover handled for you, in every region.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="M7 15l4-6 4 3 5-7" /></svg>
+          </div>
+          <h3>Observability</h3>
+          <p>Traces, metrics and logs unified across regions — query your whole fleet from one dashboard.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <h3>Zero-trust security</h3>
+          <p>mTLS between every node, automated secrets rotation and a DDoS shield that absorbs attacks at the edge.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" /></svg>
+          </div>
+          <h3>Realtime data</h3>
+          <p>A distributed message bus and database that replicate to every region — reads are always local, writes are always consistent.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4" /><circle cx="12" cy="12" r="4" /></svg>
+          </div>
+          <h3>Edge AI inference</h3>
+          <p>Ship models to the network and infer in under 10 ms at the node nearest your user — no round trip to a core cloud.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PROJECTS ================= -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Featured projects</span>
+        <h2>Built on our own network</h2>
+        <p>Every product below runs dogfooded on OmniNodeCo infrastructure. See the full catalogue on the projects page.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card project-card reveal" data-category="infrastructure">
+          <div class="project-thumb thumb-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5" /><rect x="3" y="13" width="18" height="7" rx="1.5" /><path d="M7 7.5h.01M7 16.5h.01" /></svg>
+          </div>
+          <div class="project-meta">
+            <h3 style="margin:0;">OmniCore</h3>
+            <span class="status status-live">Live</span>
+          </div>
+          <p>Container orchestration that manages 1.2M+ containers across the edge mesh, with automatic regional failover.</p>
+          <div class="tags">
+            <span class="tag">Kubernetes</span><span class="tag">Go</span><span class="tag">Infrastructure</span>
+          </div>
+          <a class="card-link" href="projects.html">Project details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </a>
+        </article>
+
+        <article class="card project-card reveal" data-category="data-ai">
+          <div class="project-thumb thumb-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg>
+          </div>
+          <div class="project-meta">
+            <h3 style="margin:0;">FluxDB</h3>
+            <span class="status status-live">Live</span>
+          </div>
+          <p>Distributed time-series database tuned for telemetry at scale — 40 billion metrics ingested daily.</p>
+          <div class="tags">
+            <span class="tag">Time-series</span><span class="tag">Rust</span><span class="tag">Data</span>
+          </div>
+          <a class="card-link" href="projects.html">Project details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </a>
+        </article>
+
+        <article class="card project-card reveal" data-category="developer-tools">
+          <div class="project-thumb thumb-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6M12 19h8" /></svg>
+          </div>
+          <div class="project-meta">
+            <h3 style="margin:0;">NodePilot</h3>
+            <span class="status status-beta">Beta</span>
+          </div>
+          <p>Control plane and CLI that turns 42 regions into one machine. Deploy, scale and debug from your terminal.</p>
+          <div class="tags">
+            <span class="tag">CLI</span><span class="tag">Control plane</span><span class="tag">Tools</span>
+          </div>
+          <a class="card-link" href="projects.html">Project details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </a>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top:36px;" class="reveal">
+        <a class="btn btn-ghost" href="projects.html">View all 8 projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From <code style="font-family:var(--font-display); color:var(--accent);">git push</code> to global in minutes</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card reveal">
+          <h3 style="color:var(--accent); font-size:34px; margin-bottom:8px;">01</h3>
+          <h3>Connect your repo</h3>
+          <p>Link your Git repository and pick your regions. We detect your stack and suggest a config.</p>
+        </article>
+        <article class="card reveal">
+          <h3 style="color:var(--accent); font-size:34px; margin-bottom:8px;">02</h3>
+          <h3>Push to deploy</h3>
+          <p>Every push builds, tests and rolls out across the mesh with zero-downtime traffic shifting.</p>
+        </article>
+        <article class="card reveal">
+          <h3 style="color:var(--accent); font-size:34px; margin-bottom:8px;">03</h3>
+          <h3>Observe &amp; scale</h3>
+          <p>Watch live traffic from the control plane. Autoscaling adapts to demand in every region.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Ready to run <span class="gradient-text">everywhere</span>?</h2>
+        <p>Spin up your first workload in minutes, not months. Free tier includes 5 regions and 50 GB-month of edge compute.</p>
+        <a class="btn btn-primary" href="contact.html">Start free — no card required</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="32" height="32" rx="9" stroke="url(#bm2)" stroke-width="1.6" fill="rgba(34,211,238,0.06)" />
+              <circle cx="17" cy="17" r="4" fill="url(#bm2)" />
+              <circle cx="9" cy="10" r="2.2" fill="#22d3ee" />
+              <circle cx="25" cy="9" r="2.2" fill="#a78bfa" />
+              <circle cx="26" cy="25" r="2.2" fill="#22d3ee" />
+              <circle cx="8" cy="24" r="2.2" fill="#a78bfa" />
+              <path d="M11 11l4.4 4.4M22.5 10.5L19 15M24.5 23.5l-5-4.5M10 22.5l4.6-4" stroke="url(#bm2)" stroke-width="1.4" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="bm2" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#a78bfa" />
+                </linearGradient>
+              </defs>
+            </svg>
+            OmniNodeCo
+          </a>
+          <p>The edge network for modern applications. Compute, data and intelligence — delivered wherever your users are.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html#featured">OmniCore</a></li>
+            <li><a href="projects.html">EdgeMesh</a></li>
+            <li><a href="projects.html">FluxDB</a></li>
+            <li><a href="projects.html">NodePilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="projects.html">Status: <span style="color:var(--ok);">All systems operational</span></a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="mailto:hello@omninodeco.com">hello@omninodeco.com</a></li>
+            <li><a href="contact.html">Support 24/7</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> OmniNodeCo. All rights reserved.</span>
+        <span class="deploy-chip"><span class="dot"></span>Deployed via GitHub Actions → FTP</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
