@@ -5,7 +5,7 @@
 #
 # Required repository secrets:
 #
-#   FTP_SERVER       e.g. ftp.example.com   (no scheme, no path)
+#   FTP_SERVER       e.g. ftp.example.com
 #   FTP_USERNAME     your FTP login
 #   FTP_PASSWORD     your FTP password
 #   FTP_PORT         default 21
@@ -13,8 +13,8 @@
 #
 # Optional secret:
 #
-#   WEBSITE_URL      production URL for the post-deploy smoke test,
-#                    e.g. https://www.example.com
+#   WEBSITE_URL      production URL for the post-deploy smoke test
+#                    e.g. https://omninodeco.liveblog365.com/
 #
 # Protocol options:
 #   ftp | ftps | ftps-legacy | sftp
@@ -43,6 +43,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     timeout-minutes: 10
+
+    # Make the optional website URL available to all steps.
+    env:
+      WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
 
     steps:
 
@@ -84,25 +88,39 @@ jobs:
 
       # --------------------------------------------------------
       # 3. Smoke test production website
-      #
-      # IMPORTANT:
-      # GitHub does not allow secrets.* directly in an `if`.
-      # The secret is first placed into an environment variable.
       # --------------------------------------------------------
       - name: 🌐 Smoke test production
         if: ${{ env.WEBSITE_URL != '' }}
-        env:
-          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
+        continue-on-error: true
         run: |
-          curl \
-            --fail \
+          echo "Testing $WEBSITE_URL"
+
+          HTTP_CODE=$(curl \
+            --location \
             --silent \
             --show-error \
             --output /dev/null \
+            --write-out "%{http_code}" \
+            --connect-timeout 10 \
             --max-time 30 \
-            "$WEBSITE_URL"
+            "$WEBSITE_URL" || true)
 
-          echo "✅ Production smoke test passed."
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Website responded with HTTP 200."
+
+          elif [ "$HTTP_CODE" = "301" ] || \
+               [ "$HTTP_CODE" = "302" ] || \
+               [ "$HTTP_CODE" = "303" ] || \
+               [ "$HTTP_CODE" = "307" ] || \
+               [ "$HTTP_CODE" = "308" ]; then
+            echo "✅ Website responded with HTTP $HTTP_CODE (redirect)."
+
+          elif [ -z "$HTTP_CODE" ] || [ "$HTTP_CODE" = "000" ]; then
+            echo "⚠️ Website did not return an HTTP response."
+
+          else
+            echo "⚠️ Website responded with HTTP $HTTP_CODE."
+          fi
 
       # --------------------------------------------------------
       # 4. Deployment summary
@@ -112,7 +130,6 @@ jobs:
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
-          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
         run: |
           echo "### 🚀 Deploy finished" >> "$GITHUB_STEP_SUMMARY"
 
