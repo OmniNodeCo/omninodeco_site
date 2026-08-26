@@ -81,6 +81,15 @@ jobs:
             **/*.log
 
       # 4. Smoke test: confirm the production URL answers 200.
+      #    The publish target lives in the WEBSITE_URL secret.
       - name: 🌐 Smoke test production
         if: ${{ secrets.WEBSITE_URL != '' }}
         run: curl --fail --silent --show-error --output /dev/null --max-time 30 "${{ secrets.WEBSITE_URL }}"
+
+      # 5. Summary: show the site we published to.
+      - name: 📝 Deploy summary
+        if: always()
+        run: |
+          echo "### 🚀 Deploy finished" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 📂 Uploaded to: \`${{ secrets.FTP_SERVER }}\` → \`${{ secrets.FTP_SERVER_DIR }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 🌐 Website: ${{ secrets.WEBSITE_URL }}" >> "$GITHUB_STEP_SUMMARY"
