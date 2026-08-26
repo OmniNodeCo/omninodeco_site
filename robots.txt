@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.omninodeco.com/sitemap.xml
+Sitemap: https://omninodeco.liveblog365.com/sitemap.xml

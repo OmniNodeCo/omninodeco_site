@@ -122,7 +122,21 @@ CONFIG = {
 ## Contributing / notes
 
 - Site content is fictional placeholder copy — swap in real product info.
-- `sitemap.xml` and `robots.txt` reference `https://www.omninodeco.com`;
-  update to your real domain.
+- `sitemap.xml`, `robots.txt` and the Open Graph tags point at
+  `https://omninodeco.liveblog365.com/` (the production URL).
 - Prefer no external dependencies: if you add a build step, insert it between
   the checkout and FTP steps in `deploy.yml`.
+
+## Going live (checklist)
+
+1. Push `.github/workflows/deploy.yml` (currently kept local until the GitHub
+   connection has the `workflows` permission): `git add -f .github/workflows/deploy.yml && git commit && git push`.
+2. Make sure the workflow's trigger branch matches your default branch — it
+   currently fires on `main`, so push (or merge) the site to `main`.
+3. Add the secrets (Settings → Secrets and variables → Actions):
+   `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_PORT`, `FTP_SERVER_DIR`,
+   and optionally `WEBSITE_URL=https://omninodeco.liveblog365.com/` to enable
+   the post-deploy smoke test.
+4. Trigger a deploy (push to main or Actions → Run workflow) — then
+   https://omninodeco.liveblog365.com/ serves the site instead of the host's
+   default placeholder page.
