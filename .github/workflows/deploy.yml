@@ -5,11 +5,11 @@
 #
 # Required repository secrets:
 #
-#   FTP_SERVER       e.g. ftp.example.com
+#   FTP_SERVER       e.g. ftp.example.com   (no scheme, no path)
 #   FTP_USERNAME     your FTP login
 #   FTP_PASSWORD     your FTP password
 #   FTP_PORT         default 21
-#   FTP_SERVER_DIR   remote folder to publish into, e.g. /public_html
+#   FTP_SERVER_DIR   remote folder, e.g. /public_html
 #
 # Optional secret:
 #
@@ -24,13 +24,15 @@ name: Deploy website to FTP
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# One deploy at a time: a new push cancels any in-flight upload.
+# One deploy at a time.
 concurrency:
   group: ftp-deploy
   cancel-in-progress: true
@@ -43,19 +45,16 @@ jobs:
     timeout-minutes: 10
 
     steps:
+
+      # --------------------------------------------------------
       # 1. Check out the repository
+      # --------------------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Optional build step
-      # Uncomment and customize if the site needs a build:
-      #
-      # - name: Build site
-      #   run: |
-      #     npm ci
-      #     npm run build
-
-      # 3. Sync the site to the FTP server
+      # --------------------------------------------------------
+      # 2. Deploy website via FTP
+      # --------------------------------------------------------
       - name: 📂 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -66,7 +65,11 @@ jobs:
           protocol: ftp
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           timeout: 60000
+
+          # Mirror the repository:
+          # delete remote files that are not present locally.
           dangerous-clean-slow: true
+
           exclude: |
             **/.git*
             **/.git*/**
@@ -79,14 +82,17 @@ jobs:
             **/Thumbs.db
             **/*.log
 
-      # 4. Smoke test production
+      # --------------------------------------------------------
+      # 3. Smoke test production website
       #
-      # The `secrets` context cannot be used directly in an `if:`
-      # expression. Pass the secret through an environment variable.
+      # IMPORTANT:
+      # GitHub does not allow secrets.* directly in an `if`.
+      # The secret is first placed into an environment variable.
+      # --------------------------------------------------------
       - name: 🌐 Smoke test production
+        if: ${{ env.WEBSITE_URL != '' }}
         env:
           WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
-        if: env.WEBSITE_URL != ''
         run: |
           curl \
             --fail \
@@ -98,10 +104,9 @@ jobs:
 
           echo "✅ Production smoke test passed."
 
-      # 5. Summary
-      #
-      # Secrets are exposed to the shell only through environment
-      # variables. Passwords are never included in the summary.
+      # --------------------------------------------------------
+      # 4. Deployment summary
+      # --------------------------------------------------------
       - name: 📝 Deploy summary
         if: always()
         env:
