@@ -68,10 +68,22 @@
       el.style.transitionDelay = (i % 4) * 0.07 + "s";
       io.observe(el);
     });
+
+    // Hook for dynamically rendered content (e.g. GitHub projects):
+    // window.omninodecoReveal([el, ...]) observes new elements too.
+    window.omninodecoReveal = function (els) {
+      els.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 0.07 + "s";
+        io.observe(el);
+      });
+    };
   } else {
     revealEls.forEach(function (el) {
       el.classList.add("in-view");
     });
+    window.omninodecoReveal = function (els) {
+      els.forEach(function (el) { el.classList.add("in-view"); });
+    };
   }
 
   /* ---------- Project filtering (projects page) ---------- */

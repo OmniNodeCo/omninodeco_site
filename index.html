@@ -177,66 +177,16 @@
   <section class="section" style="padding-top: 0;">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Featured projects</span>
-        <h2>Built on our own network</h2>
-        <p>Every product below runs dogfooded on OmniNodeCo infrastructure. See the full catalogue on the projects page.</p>
+        <span class="eyebrow">GitHub projects</span>
+        <h2>Open projects, live from GitHub</h2>
+        <p>These cards come straight from the GitHub API — every release, version and download link updates automatically when we push.</p>
       </div>
 
-      <div class="grid grid-3">
-        <article class="card project-card reveal" data-category="infrastructure">
-          <div class="project-thumb thumb-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5" /><rect x="3" y="13" width="18" height="7" rx="1.5" /><path d="M7 7.5h.01M7 16.5h.01" /></svg>
-          </div>
-          <div class="project-meta">
-            <h3 style="margin:0;">OmniCore</h3>
-            <span class="status status-live">Live</span>
-          </div>
-          <p>Container orchestration that manages 1.2M+ containers across the edge mesh, with automatic regional failover.</p>
-          <div class="tags">
-            <span class="tag">Kubernetes</span><span class="tag">Go</span><span class="tag">Infrastructure</span>
-          </div>
-          <a class="card-link" href="projects.html">Project details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-          </a>
-        </article>
-
-        <article class="card project-card reveal" data-category="data-ai">
-          <div class="project-thumb thumb-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg>
-          </div>
-          <div class="project-meta">
-            <h3 style="margin:0;">FluxDB</h3>
-            <span class="status status-live">Live</span>
-          </div>
-          <p>Distributed time-series database tuned for telemetry at scale — 40 billion metrics ingested daily.</p>
-          <div class="tags">
-            <span class="tag">Time-series</span><span class="tag">Rust</span><span class="tag">Data</span>
-          </div>
-          <a class="card-link" href="projects.html">Project details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-          </a>
-        </article>
-
-        <article class="card project-card reveal" data-category="developer-tools">
-          <div class="project-thumb thumb-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6M12 19h8" /></svg>
-          </div>
-          <div class="project-meta">
-            <h3 style="margin:0;">NodePilot</h3>
-            <span class="status status-beta">Beta</span>
-          </div>
-          <p>Control plane and CLI that turns 42 regions into one machine. Deploy, scale and debug from your terminal.</p>
-          <div class="tags">
-            <span class="tag">CLI</span><span class="tag">Control plane</span><span class="tag">Tools</span>
-          </div>
-          <a class="card-link" href="projects.html">Project details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-          </a>
-        </article>
-      </div>
+      <!-- Top 3 repos, rendered by js/projects.js from the GitHub API -->
+      <div class="grid grid-3" data-project-grid data-limit="3"></div>
 
       <div style="text-align:center; margin-top:36px;" class="reveal">
-        <a class="btn btn-ghost" href="projects.html">View all 8 projects
+        <a class="btn btn-ghost" href="projects.html">View all projects
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
         </a>
       </div>
@@ -346,5 +296,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
 </body>
 </html>
